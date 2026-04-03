@@ -1,54 +1,591 @@
-🏠 家庭管家日報
-2026 年 4 月 2 日 星期四
-🚨 報稅倒數
-13 天（截止 4/15）
-FBAR 仍有 2 項未完成，進入加強提醒期！
-👶
-寶寶月齡
-約 4 個月
-🚚
-搬家目標
-本月！
-🧾
-報稅進度
-2 項待辦
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>家庭管家日報 - 2026/04/02</title>
+<style>
+  :root {
+    --bg: #faf9f6;
+    --card: #ffffff;
+    --accent: #e8733a;
+    --accent-light: #fff3ec;
+    --text: #2d2d2d;
+    --text-muted: #777;
+    --border: #e8e4df;
+    --green: #4caf50;
+    --green-light: #e8f5e9;
+    --red: #e53935;
+    --red-light: #ffebee;
+    --yellow: #ff9800;
+    --yellow-light: #fff8e1;
+    --blue: #2196f3;
+    --blue-light: #e3f2fd;
+    --purple: #7c4dff;
+    --purple-light: #ede7f6;
+  }
 
-		✅ 2025 聯邦稅表已 e-file 送出 ⬜ 修正 SY2025 FBAR 待處理 ⬜ SW FBAR 申報 待處理 💡 FBAR 截止 4/15（可延至 10/15），但建議本月一起處理完畢
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-完成 1 / 3 項
-🚚
-搬家準備
-本月目標
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding: 0;
+  }
 
-Reprise 搬家五階段計畫：
-1
-前置作業 — 預約搬家公司、打包物資、確認合約、斷捨離
-2
-分批打包 — 螞蟻搬家，利用 5 分鐘車程優勢慢慢載過去
-3
-行政手續 — 新家無毒清潔（寶寶安全）、水電網路、變更地址
-4
-倒數準備 — 寶寶隨身包、大人行李箱、清空冰箱
-5
-搬運日 — 安排寶寶安置計畫，優先建立寶寶舒適圈
-💡 今天可以做：盤點目前進度，列出本週搬家待辦
-👶
-寶寶照護
-約 4 個月
+  .header {
+    background: linear-gradient(135deg, #e8733a 0%, #f4a261 100%);
+    color: white;
+    padding: 32px 24px 28px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(232,115,58,0.25);
+  }
 
-		🏥 確認是否已預約 4 個月健檢 （well-baby visit）提醒 💉 第二劑疫苗：DTaP、Hib、IPV、Rotavirus、PCV13 🌟 發育里程碑：抬頭穩定、開始翻身、社交性微笑、對聲音有反應 🍼 副食品約 6 個月開始，可先研究準備（看板有食譜筆記）
-🧊
-備貨 / 採買
-狀態良好
+  .header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+  }
 
-		✅ 待買清單已全數完成，做得好！ 📦 等待購買：洗衣精、滑鼠架、檯燈、腳踏墊 搬家後再買 🧊 搬家前記得消耗冰箱食材 ，減少搬運負擔
-✅
-今日待辦
-0 / 4
+  .header .date {
+    font-size: 0.95rem;
+    opacity: 0.9;
+  }
 
-確認 FBAR 修正 SY2025 與 SW FBAR 處理進度
-盤點搬家進度，確認目前處於哪個階段
-確認寶寶 4 個月健檢與疫苗預約
-清點需打包物品，列出可斷捨離的東西
-祝你們一家三口有個順利又充實的星期四 💪
-由 AI 管家自動生成
+  .container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 20px 16px 60px;
+  }
+
+  /* Urgent Banner */
+  .urgent-banner {
+    background: linear-gradient(135deg, var(--red-light), #fff);
+    border-left: 4px solid var(--red);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 16px;
+    animation: pulse-border 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-border {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(229,57,53,0.15); }
+    50% { box-shadow: 0 0 0 6px rgba(229,57,53,0.08); }
+  }
+
+  .urgent-banner .label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--red);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+
+  .urgent-banner .countdown {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--red);
+    display: inline-block;
+  }
+
+  .urgent-banner .countdown-unit {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-left: 4px;
+  }
+
+  .urgent-banner p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  /* Stat Row */
+  .stat-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .stat-card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+  }
+
+  .stat-card .emoji { font-size: 1.4rem; margin-bottom: 4px; }
+  .stat-card .stat-label { font-size: 0.75rem; color: var(--text-muted); }
+  .stat-card .stat-value { font-size: 1.1rem; font-weight: 700; }
+
+  /* Accordion Sections */
+  .section {
+    background: var(--card);
+    border-radius: 14px;
+    margin-bottom: 14px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+
+  .section:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 18px;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: background 0.15s;
+  }
+
+  .section-header:hover { background: rgba(0,0,0,0.015); }
+
+  .section-header .left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .section-badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .chevron {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+    color: var(--text-muted);
+    flex-shrink: 0;
+  }
+
+  .section.open .chevron { transform: rotate(180deg); }
+
+  .section-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  .section.open .section-body { max-height: 800px; }
+
+  .section-content {
+    padding: 0 18px 18px;
+    font-size: 0.88rem;
+    line-height: 1.8;
+    color: #444;
+  }
+
+  .section-content ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .section-content li {
+    padding: 6px 0;
+    border-bottom: 1px solid #f5f3f0;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .section-content li:last-child { border-bottom: none; }
+
+  .section-content li .bullet {
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 1px 7px;
+    border-radius: 6px;
+    margin-left: 4px;
+    vertical-align: middle;
+  }
+
+  .tag-urgent { background: var(--red-light); color: var(--red); }
+  .tag-info { background: var(--blue-light); color: var(--blue); }
+  .tag-done { background: var(--green-light); color: var(--green); }
+  .tag-tip { background: var(--yellow-light); color: var(--yellow); }
+
+  /* Checkbox list for todos */
+  .todo-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f5f3f0;
+    cursor: pointer;
+  }
+
+  .todo-item:last-child { border-bottom: none; }
+
+  .todo-check {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border);
+    border-radius: 6px;
+    flex-shrink: 0;
+    margin-top: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+
+  .todo-check:hover { border-color: var(--accent); }
+
+  .todo-item.checked .todo-check {
+    background: var(--green);
+    border-color: var(--green);
+  }
+
+  .todo-item.checked .todo-check::after {
+    content: "\2713";
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .todo-item.checked .todo-text {
+    text-decoration: line-through;
+    color: var(--text-muted);
+  }
+
+  .todo-text { font-size: 0.88rem; }
+
+  /* Progress bar */
+  .progress-wrap {
+    margin-top: 12px;
+    margin-bottom: 4px;
+  }
+
+  .progress-bar {
+    height: 6px;
+    background: #eee;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.5s ease;
+  }
+
+  .progress-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+    text-align: right;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 24px 0;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+
+  /* Phase timeline */
+  .phase-list { padding: 0; }
+
+  .phase-item {
+    display: flex;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f5f3f0;
+    align-items: flex-start;
+  }
+
+  .phase-item:last-child { border-bottom: none; }
+
+  .phase-num {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    font-size: 0.7rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .phase-active { background: var(--accent); color: white; }
+  .phase-pending { background: #eee; color: var(--text-muted); }
+
+  .phase-desc { font-size: 0.85rem; }
+  .phase-desc strong { font-weight: 600; }
+
+  /* Responsive */
+  @media (max-width: 400px) {
+    .header h1 { font-size: 1.3rem; }
+    .stat-row { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .container { padding: 14px 10px 40px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🏠 家庭管家日報</h1>
+  <div class="date">2026 年 4 月 2 日 星期四</div>
+</div>
+
+<div class="container">
+
+  <!-- Urgent Banner -->
+  <div class="urgent-banner">
+    <div class="label">🚨 報稅倒數</div>
+    <span class="countdown" id="taxCountdown">13</span>
+    <span class="countdown-unit">天（截止 4/15）</span>
+    <p>FBAR 仍有 2 項未完成，進入加強提醒期！</p>
+  </div>
+
+  <!-- Stat Cards -->
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="emoji">👶</div>
+      <div class="stat-label">寶寶月齡</div>
+      <div class="stat-value">約 4 個月</div>
+    </div>
+    <div class="stat-card">
+      <div class="emoji">🚚</div>
+      <div class="stat-label">搬家目標</div>
+      <div class="stat-value" style="color:var(--accent);">本月！</div>
+    </div>
+  </div>
+
+  <!-- Tax Section -->
+  <div class="section open">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="left">
+        <div class="section-icon" style="background:var(--red-light);">🧾</div>
+        <span class="section-title">報稅進度</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <span class="section-badge" style="background:var(--red-light);color:var(--red);">2 項待辦</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="section-content">
+        <ul>
+          <li><span class="bullet">✅</span> 2025 聯邦稅表已 e-file 送出</li>
+          <li><span class="bullet">⬜</span> 修正 SY2025 FBAR <span class="tag tag-urgent">待處理</span></li>
+          <li><span class="bullet">⬜</span> SW FBAR 申報 <span class="tag tag-urgent">待處理</span></li>
+          <li><span class="bullet">💡</span> FBAR 截止 4/15（可延至 10/15），但建議本月一起處理完畢</li>
+        </ul>
+        <div class="progress-wrap">
+          <div class="progress-bar"><div class="progress-fill" style="width:33%;background:var(--red);"></div></div>
+          <div class="progress-label">完成 1 / 3 項</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Moving Section -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="left">
+        <div class="section-icon" style="background:var(--accent-light);">🚚</div>
+        <span class="section-title">搬家準備</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <span class="section-badge" style="background:var(--accent-light);color:var(--accent);">本月目標</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="section-content">
+        <p style="margin-bottom:10px;font-weight:600;">Reprise 搬家五階段計畫：</p>
+        <div class="phase-list">
+          <div class="phase-item">
+            <div class="phase-num phase-active">1</div>
+            <div class="phase-desc"><strong>前置作業</strong> — 預約搬家公司、打包物資、確認合約、斷捨離</div>
+          </div>
+          <div class="phase-item">
+            <div class="phase-num phase-active">2</div>
+            <div class="phase-desc"><strong>分批打包</strong> — 螞蟻搬家，利用 5 分鐘車程優勢慢慢載過去</div>
+          </div>
+          <div class="phase-item">
+            <div class="phase-num phase-pending">3</div>
+            <div class="phase-desc"><strong>行政手續</strong> — 新家無毒清潔（寶寶安全）、水電網路、變更地址</div>
+          </div>
+          <div class="phase-item">
+            <div class="phase-num phase-pending">4</div>
+            <div class="phase-desc"><strong>倒數準備</strong> — 寶寶隨身包、大人行李箱、清空冰箱</div>
+          </div>
+          <div class="phase-item">
+            <div class="phase-num phase-pending">5</div>
+            <div class="phase-desc"><strong>搬運日</strong> — 安排寶寶安置計畫，優先建立寶寶舒適圈</div>
+          </div>
+        </div>
+        <p style="margin-top:12px;font-size:0.82rem;color:var(--text-muted);">💡 今天可以做：盤點目前進度，列出本週搬家待辦</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Baby Section -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="left">
+        <div class="section-icon" style="background:var(--purple-light);">👶</div>
+        <span class="section-title">寶寶照護</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <span class="section-badge" style="background:var(--purple-light);color:var(--purple);">約 4 個月</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="section-content">
+        <ul>
+          <li><span class="bullet">🏥</span> 確認是否已預約 <strong>4 個月健檢</strong>（well-baby visit）<span class="tag tag-info">提醒</span></li>
+          <li><span class="bullet">💉</span> 第二劑疫苗：DTaP、Hib、IPV、Rotavirus、PCV13</li>
+          <li><span class="bullet">🌟</span> 發育里程碑：抬頭穩定、開始翻身、社交性微笑、對聲音有反應</li>
+          <li><span class="bullet">🍼</span> 副食品約 6 個月開始，可先研究準備（看板有食譜筆記）</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stock/Shopping Section -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="left">
+        <div class="section-icon" style="background:var(--green-light);">🧊</div>
+        <span class="section-title">備貨 / 採買</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <span class="section-badge" style="background:var(--green-light);color:var(--green);">狀態良好</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="section-content">
+        <ul>
+          <li><span class="bullet">✅</span> 待買清單已全數完成，做得好！</li>
+          <li><span class="bullet">📦</span> 等待購買：洗衣精、滑鼠架、檯燈、腳踏墊 <span class="tag tag-tip">搬家後再買</span></li>
+          <li><span class="bullet">🧊</span> 搬家前記得<strong>消耗冰箱食材</strong>，減少搬運負擔</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Today's Todos -->
+  <div class="section open">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="left">
+        <div class="section-icon" style="background:var(--yellow-light);">✅</div>
+        <span class="section-title">今日待辦</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <span class="section-badge" id="todoBadge" style="background:var(--yellow-light);color:var(--yellow);">0 / 4</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="section-content" id="todoList">
+        <div class="todo-item" onclick="toggleTodo(this)">
+          <div class="todo-check"></div>
+          <span class="todo-text">確認 FBAR 修正 SY2025 與 SW FBAR 處理進度</span>
+        </div>
+        <div class="todo-item" onclick="toggleTodo(this)">
+          <div class="todo-check"></div>
+          <span class="todo-text">盤點搬家進度，確認目前處於哪個階段</span>
+        </div>
+        <div class="todo-item" onclick="toggleTodo(this)">
+          <div class="todo-check"></div>
+          <span class="todo-text">確認寶寶 4 個月健檢與疫苗預約</span>
+        </div>
+        <div class="todo-item" onclick="toggleTodo(this)">
+          <div class="todo-check"></div>
+          <span class="todo-text">清點需打包物品，列出可斷捨離的東西</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    祝你們一家三口有個順利又充實的星期四 💪<br>
+    <span style="font-size:0.7rem;">由 AI 管家自動生成</span>
+  </div>
+
+</div>
+
+<script>
+  function toggleSection(header) {
+    header.closest('.section').classList.toggle('open');
+  }
+
+  function toggleTodo(item) {
+    item.classList.toggle('checked');
+    updateTodoBadge();
+  }
+
+  function updateTodoBadge() {
+    const items = document.querySelectorAll('#todoList .todo-item');
+    const checked = document.querySelectorAll('#todoList .todo-item.checked');
+    const badge = document.getElementById('todoBadge');
+    badge.textContent = checked.length + ' / ' + items.length;
+    if (checked.length === items.length) {
+      badge.style.background = 'var(--green-light)';
+      badge.style.color = 'var(--green)';
+    } else {
+      badge.style.background = 'var(--yellow-light)';
+      badge.style.color = 'var(--yellow)';
+    }
+  }
+
+  // Live countdown
+  function updateCountdown() {
+    const deadline = new Date('2026-04-15T23:59:59');
+    const now = new Date();
+    const diff = Math.ceil((deadline - now) / (1000 * 60 * 60 * 24));
+    document.getElementById('taxCountdown').textContent = Math.max(0, diff);
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 3600000);
+</script>
+
+</body>
+</html>
