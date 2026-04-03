@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>家庭管家日報 - 2026/04/02</title>
+<title>家庭管家日報 - 2026/04/03</title>
 <style>
   :root {
     --bg: #faf9f6;
@@ -56,6 +56,12 @@
   .header .date {
     font-size: 0.95rem;
     opacity: 0.9;
+  }
+
+  .header .day-tip {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    margin-top: 4px;
   }
 
   .container {
@@ -198,7 +204,7 @@
     transition: max-height 0.35s ease;
   }
 
-  .section.open .section-body { max-height: 800px; }
+  .section.open .section-body { max-height: 1000px; }
 
   .section-content {
     padding: 0 18px 18px;
@@ -349,11 +355,31 @@
     margin-top: 2px;
   }
 
+  .phase-done { background: var(--green); color: white; }
   .phase-active { background: var(--accent); color: white; }
   .phase-pending { background: #eee; color: var(--text-muted); }
 
   .phase-desc { font-size: 0.85rem; }
   .phase-desc strong { font-weight: 600; }
+
+  /* Weekend callout */
+  .weekend-tip {
+    background: linear-gradient(135deg, var(--blue-light), #fff);
+    border-left: 4px solid var(--blue);
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+    font-size: 0.85rem;
+    color: #444;
+  }
+  .weekend-tip .tip-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--blue);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
 
   /* Responsive */
   @media (max-width: 400px) {
@@ -367,7 +393,8 @@
 
 <div class="header">
   <h1>🏠 家庭管家日報</h1>
-  <div class="date">2026 年 4 月 2 日 星期四</div>
+  <div class="date">2026 年 4 月 3 日 星期五</div>
+  <div class="day-tip">週五了！可以規劃週末的採買與搬家打包行程</div>
 </div>
 
 <div class="container">
@@ -375,9 +402,15 @@
   <!-- Urgent Banner -->
   <div class="urgent-banner">
     <div class="label">🚨 報稅倒數</div>
-    <span class="countdown" id="taxCountdown">13</span>
+    <span class="countdown" id="taxCountdown">12</span>
     <span class="countdown-unit">天（截止 4/15）</span>
-    <p>FBAR 仍有 2 項未完成，進入加強提醒期！</p>
+    <p>FBAR 仍有 2 項未完成：修正 SY2025 + SW FBAR，週末抽空處理！</p>
+  </div>
+
+  <!-- Weekend Tip -->
+  <div class="weekend-tip">
+    <div class="tip-label">🗓️ 週末規劃建議</div>
+    今天是週五，明後天可以安排：搬家打包進度推進、冰箱食材消耗料理、帶寶寶外出散步放鬆一下
   </div>
 
   <!-- Stat Cards -->
@@ -389,8 +422,8 @@
     </div>
     <div class="stat-card">
       <div class="emoji">🚚</div>
-      <div class="stat-label">搬家目標</div>
-      <div class="stat-value" style="color:var(--accent);">本月！</div>
+      <div class="stat-label">搬家進度</div>
+      <div class="stat-value" style="color:var(--accent);">第 1-2 階段</div>
     </div>
   </div>
 
@@ -409,10 +442,12 @@
     <div class="section-body">
       <div class="section-content">
         <ul>
-          <li><span class="bullet">✅</span> 2025 聯邦稅表已 e-file 送出</li>
+          <li><span class="bullet">✅</span> 2025 聯邦稅表已 e-file 送出 <span class="tag tag-done">完成</span></li>
           <li><span class="bullet">⬜</span> 修正 SY2025 FBAR <span class="tag tag-urgent">待處理</span></li>
           <li><span class="bullet">⬜</span> SW FBAR 申報 <span class="tag tag-urgent">待處理</span></li>
-          <li><span class="bullet">💡</span> FBAR 截止 4/15（可延至 10/15），但建議本月一起處理完畢</li>
+          <li><span class="bullet">💡</span> FBAR 截止 4/15（可延至 10/15），但建議趁報稅季一起處理完畢</li>
+          <li><span class="bullet">📋</span> 海外帳戶：玉山銀行（最高 US$71,250）、富邦銀行（最高 US$45,000）</li>
+          <li><span class="bullet">🏠</span> 台中三處房屋出租收入需確認申報</li>
         </ul>
         <div class="progress-wrap">
           <div class="progress-bar"><div class="progress-fill" style="width:33%;background:var(--red);"></div></div>
@@ -430,13 +465,14 @@
         <span class="section-title">搬家準備</span>
       </div>
       <div style="display:flex;align-items:center;gap:8px;">
-        <span class="section-badge" style="background:var(--accent-light);color:var(--accent);">本月目標</span>
+        <span class="section-badge" style="background:var(--accent-light);color:var(--accent);">進行中</span>
         <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
     </div>
     <div class="section-body">
       <div class="section-content">
-        <p style="margin-bottom:10px;font-weight:600;">Reprise 搬家五階段計畫：</p>
+        <p style="margin-bottom:4px;font-size:0.82rem;color:var(--text-muted);">新家：Reprise Ter, Rockville, MD 20850</p>
+        <p style="margin-bottom:10px;font-weight:600;">五階段搬家計畫：</p>
         <div class="phase-list">
           <div class="phase-item">
             <div class="phase-num phase-active">1</div>
@@ -444,7 +480,7 @@
           </div>
           <div class="phase-item">
             <div class="phase-num phase-active">2</div>
-            <div class="phase-desc"><strong>分批打包</strong> — 螞蟻搬家，利用 5 分鐘車程優勢慢慢載過去</div>
+            <div class="phase-desc"><strong>分批打包</strong> — 螞蟻搬家，利用 5 分鐘車程優勢慢慢載箱子過去</div>
           </div>
           <div class="phase-item">
             <div class="phase-num phase-pending">3</div>
@@ -452,14 +488,14 @@
           </div>
           <div class="phase-item">
             <div class="phase-num phase-pending">4</div>
-            <div class="phase-desc"><strong>倒數準備</strong> — 寶寶隨身包、大人行李箱、清空冰箱</div>
+            <div class="phase-desc"><strong>倒數準備</strong> — 寶寶隨身生存包、大人行李箱、清空冰箱</div>
           </div>
           <div class="phase-item">
             <div class="phase-num phase-pending">5</div>
-            <div class="phase-desc"><strong>搬運日</strong> — 安排寶寶安置計畫，優先建立寶寶舒適圈</div>
+            <div class="phase-desc"><strong>搬運日</strong> — 寶寶安置計畫，優先建立寶寶舒適圈</div>
           </div>
         </div>
-        <p style="margin-top:12px;font-size:0.82rem;color:var(--text-muted);">💡 今天可以做：盤點目前進度，列出本週搬家待辦</p>
+        <p style="margin-top:12px;font-size:0.82rem;color:var(--text-muted);">💡 週末可以做：開始打包非必需品、按新家空間標示箱子、每次出門順便載幾箱過去</p>
       </div>
     </div>
   </div>
@@ -482,7 +518,8 @@
           <li><span class="bullet">🏥</span> 確認是否已預約 <strong>4 個月健檢</strong>（well-baby visit）<span class="tag tag-info">提醒</span></li>
           <li><span class="bullet">💉</span> 第二劑疫苗：DTaP、Hib、IPV、Rotavirus、PCV13</li>
           <li><span class="bullet">🌟</span> 發育里程碑：抬頭穩定、開始翻身、社交性微笑、對聲音有反應</li>
-          <li><span class="bullet">🍼</span> 副食品約 6 個月開始，可先研究準備（看板有食譜筆記）</li>
+          <li><span class="bullet">🍼</span> 副食品約 6 個月開始，已有食譜筆記（蔬菜蒸蛋、壓力鍋燉肉、蔬菜蒸糕、寶寶肉丸）</li>
+          <li><span class="bullet">👀</span> 持續觀察：反射動作、追蹤目光能力、體重身長頭圍曲線</li>
         </ul>
       </div>
     </div>
@@ -503,9 +540,10 @@
     <div class="section-body">
       <div class="section-content">
         <ul>
-          <li><span class="bullet">✅</span> 待買清單已全數完成，做得好！</li>
-          <li><span class="bullet">📦</span> 等待購買：洗衣精、滑鼠架、檯燈、腳踏墊 <span class="tag tag-tip">搬家後再買</span></li>
-          <li><span class="bullet">🧊</span> 搬家前記得<strong>消耗冰箱食材</strong>，減少搬運負擔</li>
+          <li><span class="bullet">✅</span> 待買清單已全數完成！</li>
+          <li><span class="bullet">📦</span> 搬家後再買：洗衣精、滑鼠架、檯燈、腳踏墊 <span class="tag tag-tip">搬家後</span></li>
+          <li><span class="bullet">🧊</span> 搬家前<strong>消耗冰箱食材</strong>，減少搬運負擔 <span class="tag tag-info">週末任務</span></li>
+          <li><span class="bullet">🍳</span> 可趁週末批量做副食品冷凍備餐（蒸蛋、肉丸等），搬家期間方便餵寶寶</li>
         </ul>
       </div>
     </div>
@@ -519,7 +557,7 @@
         <span class="section-title">今日待辦</span>
       </div>
       <div style="display:flex;align-items:center;gap:8px;">
-        <span class="section-badge" id="todoBadge" style="background:var(--yellow-light);color:var(--yellow);">0 / 4</span>
+        <span class="section-badge" id="todoBadge" style="background:var(--yellow-light);color:var(--yellow);">0 / 5</span>
         <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
     </div>
@@ -527,27 +565,31 @@
       <div class="section-content" id="todoList">
         <div class="todo-item" onclick="toggleTodo(this)">
           <div class="todo-check"></div>
-          <span class="todo-text">確認 FBAR 修正 SY2025 與 SW FBAR 處理進度</span>
+          <span class="todo-text">🔴 處理 FBAR：修正 SY2025 與 SW FBAR（剩 12 天）</span>
         </div>
         <div class="todo-item" onclick="toggleTodo(this)">
           <div class="todo-check"></div>
-          <span class="todo-text">盤點搬家進度，確認目前處於哪個階段</span>
+          <span class="todo-text">🚚 規劃週末搬家進度：列出本週可打包的非必需品</span>
         </div>
         <div class="todo-item" onclick="toggleTodo(this)">
           <div class="todo-check"></div>
-          <span class="todo-text">確認寶寶 4 個月健檢與疫苗預約</span>
+          <span class="todo-text">👶 確認寶寶 4 個月健檢與疫苗預約時間</span>
         </div>
         <div class="todo-item" onclick="toggleTodo(this)">
           <div class="todo-check"></div>
-          <span class="todo-text">清點需打包物品，列出可斷捨離的東西</span>
+          <span class="todo-text">🧊 清點冰箱食材，安排週末消耗料理計畫</span>
+        </div>
+        <div class="todo-item" onclick="toggleTodo(this)">
+          <div class="todo-check"></div>
+          <span class="todo-text">📦 收集打包物資（紙箱、封箱膠帶、氣泡紙、奇異筆）</span>
         </div>
       </div>
     </div>
   </div>
 
   <div class="footer">
-    祝你們一家三口有個順利又充實的星期四 💪<br>
-    <span style="font-size:0.7rem;">由 AI 管家自動生成</span>
+    週五辛苦了！週末一家人一起打包也是一種幸福的忙碌 💛<br>
+    <span style="font-size:0.7rem;">由 AI 管家於 2026/04/03 早晨自動生成</span>
   </div>
 
 </div>
@@ -576,12 +618,13 @@
     }
   }
 
-  // Live countdown
+  // Live tax countdown
   function updateCountdown() {
     const deadline = new Date('2026-04-15T23:59:59');
     const now = new Date();
     const diff = Math.ceil((deadline - now) / (1000 * 60 * 60 * 24));
-    document.getElementById('taxCountdown').textContent = Math.max(0, diff);
+    const el = document.getElementById('taxCountdown');
+    if (el) el.textContent = Math.max(0, diff);
   }
   updateCountdown();
   setInterval(updateCountdown, 3600000);
